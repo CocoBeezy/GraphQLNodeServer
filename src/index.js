@@ -1,12 +1,12 @@
-import express from 'express';
-import expressGraphQL from 'express-graphql';
-import bodyParser from 'body-parser';
-import morgan from 'morgan';
-import cors from 'cors';
-import initializeDb from './db';
-import config from './config';
-import middleware from './middleware';
-import schema from './schemas';
+const express = require('express');
+const expressGraphQL = require('express-graphql');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const cors = require('cors');
+const initializeDb = require('./db');
+const config = require('./config');
+const middleware = require('./middleware');
+const schema = require('./schemas');
 
 const graphQLServer = express();
 

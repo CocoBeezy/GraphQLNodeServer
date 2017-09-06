@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
-import _ from 'lodash';
+const mongoose = require('mongoose');
+const _ = require('lodash');
 const User = mongoose.model('User');
 const Company = mongoose.model('Company');
-import {
+const {
   GraphQLObjectType,
   GraphQLID,
   GraphQLString,
@@ -10,7 +10,7 @@ import {
   GraphQLSchema,
   GraphQLList,
   GraphQLNonNull
-} from 'graphql';
+} = require('graphql');
 
 
 const CompanyType = new GraphQLObjectType({
@@ -236,7 +236,7 @@ const Mutation = new GraphQLObjectType({
   }
 });
 
-export default new GraphQLSchema({
+module.exports = new GraphQLSchema({
   query: RootQuery,
   mutation: Mutation
 });

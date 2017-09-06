@@ -1,6 +1,6 @@
-import { Router } from 'express';
+const Router = require('express').Router;
 
-export default ({ config, db }) => {
+module.exports = ({ config, db }) => {
   let api = Router();
 
   // Add Middleware

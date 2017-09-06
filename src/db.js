@@ -1,13 +1,13 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-import config from './config';
-import fs from 'fs';
+const config = require('./config');
+const fs = require('fs');
 
 // Models - require all Models
 // this allows the user of the
 // following syntax:
 // const User = mongoose.mode('User');
-console.log('Loaded Mongoose Models...')
+console.log('Loaded Mongoose Models...');
 fs.readdirSync(__dirname + '/models')
   .forEach(file => { 
     if (~file.indexOf('.js')) 
@@ -15,7 +15,7 @@ fs.readdirSync(__dirname + '/models')
   });
 console.log('Finished!');
 
-export default callback => {
+module.exports = function(callback) {
   let db = mongoose.connect(config.mongoUrl);
   callback(db);
 }
